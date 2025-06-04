@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}Download{% endblock %}
+{% block content %}
+
+<div class="container mx-auto mt-10 px-4">
+    <h1 class="text-3xl font-bold mb-8 text-gray-300 text-center">Download Files</h1>
+    {% if files %}
+        <div class="overflow-x-auto">
+            <table class="w-full bg-gray-800 border border-gray-600 shadow-md rounded-lg divide-y divide-gray-600">
+                <thead>
+                    <tr class="bg-gray-700 text-gray-300">
+                        <th class="py-3 px-6 border-b text-left">File Name</th>
+                        <th class="py-3 px-6 border-b text-left">Details</th>
+                        <th class="py-3 px-6 border-b text-left">Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-600">
+                    {% for file in files %}
+                        <tr class="hover:bg-gray-700 transition duration-300">
+                            <td class="py-4 px-6 border-b text-left text-gray-200">{{ file['name'] }}</td>
+                            <td class="py-4 px-6 border-b text-left text-gray-200">{{ file['type'] }} | {{ file['size'] }}</td>
+                            <td class="py-4 px-6 border-b text-left">
+                                <a href="{{ url_for('download', filename=file['name']) }}" class="btn bg-blue-700 hover:bg-blue-500 text-white hover:text-black px-4 py-2 rounded transition duration-300">Download</a>
+                                <a href="{{ url_for('preview', filename=file['name']) }}" target="_blank" class="btn bg-blue-700 hover:bg-blue-500 text-white hover:text-black px-4 py-2 rounded transition duration-300">Preview</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <div class="text-center">
+            <p class="text-lg text-gray-300">Cloud is empty!</p>
+        </div>
+    {% endif %}
+
+    <div class="flex justify-center mt-8">
+        <a href="{{ url_for('home') }}" class="btn bg-blue-700 hover:bg-blue-500 text-white hover:text-black px-8 py-3 rounded transition duration-300 text-center">Back to Home</a>
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Meet Creators{% endblock %}
+{% block content %}
+
+<div class="container mx-auto mt-10 px-4">
+    <h1 class="text-3xl font-bold mb-8 text-gray-300 text-center">About Creators</h1>
+    
+    <div class="flex flex-col md:flex-row justify-center items-center gap-8">
+        <!-- Daksh -->
+        <div class="bg-gray-800 rounded-lg p-6 max-w-md">
+            <h2 class="text-2xl font-bold text-gray-300 mb-4">Daksh Deep</h2>
+            <p class="text-lg text-gray-400 leading-relaxed">"Daksh, pursuing B.Tech in Information Technology from Manipal University Jaipur, is one of the driving forces behind our project. Initially conceptualized as a personal endeavor, Daksh's passion and commitment have propelled it into a fully realized project. His expertise and vision have played a crucial role in shaping the direction and success of our initiative." </p> <br>
+            <a href="https://www.linkedin.com/in/daksh-deep-791a1a298/" class="btn bg-blue-700 hover:bg-blue-500 text-white hover:text-black px-8 py-2 rounded" target="_blank">LinkedIn</a>
+            <a href="https://github.com/DakshSaxena" class="btn text-white hover:text-black px-8 py-2 rounded" style="background-color: rgb(45,186,78);" target="_blank">GitHub</a>
+        </div>
+        
+        <!-- Yashvi -->
+        <div class="bg-gray-800 rounded-lg p-6 max-w-md">
+            <h2 class="text-2xl font-bold text-gray-300 mb-4">Yashvi Arya</h2>
+            <p class="text-lg text-gray-400 leading-relaxed">"Yashvi, pursuing B.Tech in Information Technology from Manipal University Jaipur, has been an invaluable contributor to our project. Yashvi's collaboration and expertise have greatly enhanced the overall functionality of our application, making it a seamless experience for our users."</p> <br> 
+            <a href="https://www.linkedin.com/in/yashvi-arya-1455a7230/" class="btn bg-blue-700 hover:bg-blue-500 text-white hover:text-black px-8 py-2 rounded" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+
+    <div class="flex justify-center mt-8">
+        <a href="{{ url_for('home') }}" class="btn bg-blue-700 hover:bg-blue-500 text-white hover:text-black px-6 py-3 rounded transition duration-300 text-center">Back to Home</a>
+    </div>
+</div>
+{% endblock %}
